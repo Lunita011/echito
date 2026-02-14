@@ -2,148 +2,123 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Para Mi Cosito Precioso ❤️</title>
     <style>
         body {
             background-color: #fff0f3;
+            margin: 0;
+            padding: 40px 15px;
+            font-family: 'Georgia', serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            margin: 0;
-            padding: 40px 10px;
-            font-family: 'Georgia', serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            position: relative;
         }
 
-        /* CONTENEDOR PADRE PARA QUE LAS FRASES SE QUEDEN PEGADAS A LA CARTA */
+        /* CONTENEDOR PRINCIPAL */
         .wrapper {
             position: relative;
             width: 100%;
-            max-width: 450px;
-            display: flex;
-            justify-content: center;
+            max-width: 400px; /* Tamaño fijo máximo para que no se estire */
         }
 
-        /* FRASES DE APOYO (Ahora sobre la carta) */
+        /* FRASES FLOTANTES (Posicionadas sobre la carta) */
         .frase-apoyo {
             position: absolute;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             color: #d00000;
             padding: 6px 10px;
             border-radius: 12px;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             font-family: 'Arial', sans-serif;
-            animation: flotarCarta 4s ease-in-out infinite;
-            z-index: 20; /* Por encima de la carta */
-            max-width: 100px;
-            text-align: center;
+            z-index: 100;
+            animation: flotar 3s ease-in-out infinite;
             border: 1px solid #ffccd5;
+            white-space: nowrap;
         }
 
-        @keyframes flotarCarta {
-            0%, 100% { transform: translateY(0px) rotate(-2deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
-        /* Posiciones estratégicas para móvil sobre la carta */
-        .f1 { top: -20px; left: 5px; animation-delay: 0s; }
-        .f2 { top: 50px; right: -5px; animation-delay: 1s; }
-        .f3 { bottom: 80px; left: -10px; animation-delay: 2s; }
-        .f4 { bottom: -15px; right: 10px; animation-delay: 1.5s; }
+        /* Ubicaciones exactas para que no tapen el texto central */
+        .f1 { top: -25px; left: 10px; }
+        .f2 { top: 60px; right: -5px; }
+        .f3 { bottom: 100px; left: -10px; }
+        .f4 { bottom: -15px; right: 10px; }
 
-        /* DISEÑO DE LA CARTA */
+        /* LA CARTA */
         .sobre {
-            background-color: #fff9e6; 
+            background-color: #fff9e6;
             width: 100%;
             padding: 30px 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 8px solid #d00000;
             border-radius: 2px;
-            position: relative;
-            border-left: 6px solid #d00000;
-            z-index: 10;
             box-sizing: border-box;
+            position: relative;
+            z-index: 10;
         }
 
-        h1 { 
-            color: #d00000; 
-            text-align: center; 
-            font-size: 1.4rem; 
-            margin-bottom: 10px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        h4 {
-            color: #d00000;
-            text-align: center;
-            margin-top: 0;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
+        h1 { color: #d00000; text-align: center; font-size: 1.6rem; margin: 0; }
+        .sub { color: #d00000; text-align: center; display: block; font-style: italic; margin-bottom: 20px; font-size: 0.9rem; }
+        
         .texto-carta {
             color: #222;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            font-size: 1rem;
             text-align: left;
         }
 
         .firma {
             text-align: right;
-            margin-top: 25px;
+            margin-top: 30px;
             font-weight: bold;
             color: #d00000;
-            font-size: 1rem;
             font-style: italic;
         }
 
         .btn-regresar {
             display: block;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 35px;
             background: #d00000;
             color: white;
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
+            padding: 15px;
+            border-radius: 30px;
             font-family: 'Arial', sans-serif;
-            padding: 12px;
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(208, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 0.9rem;
         }
-
     </style>
 </head>
 <body>
 
     <div class="wrapper">
-        <div class="frase-apoyo f1">¡Tú puedes con todo! 🚀</div>
-        <div class="frase-apoyo f2">Tu esfuerzo es tu éxito. ✨</div>
+        <div class="frase-apoyo f1">¡Tú puedes, flaquito! 🚀</div>
+        <div class="frase-apoyo f2">Eres mi éxito. ✨</div>
         <div class="frase-apoyo f3">¡El más inteligente! 📚</div>
-        <div class="frase-apoyo f4">Dios guía tus pasos. 🙏</div>
+        <div class="frase-apoyo f4">Dios te guía. 🙏</div>
 
         <div class="sobre">
             <h1>Mi Amor... ❤️</h1>
+            <span class="sub">Para Mi Cosito Precioso</span>
             
             <div class="texto-carta">
-                <h4>Para Mi Cosito Precioso</h4> 
-                
                 Mi niño chiquito, mi príncipe,<br><br>
                 Te escribo estas palabras con el corazón lleno de amor. Eres, sin duda alguna, el dueño de mi corazón de melón y la persona que ilumina cada uno de mis días.<br><br>
-                Mi amor, quiero que leas con atención: No dudes ni un solo segundo de lo que eres capaz. Sé que a veces la vida pesa y es complicada, pero tú puedes con eso y con mucho más. Eres un hombre valiente, esforzado y con un corazón de oro.<br><br>
-                Mi flaquito, tú vas a lograr todo lo que te propongas con el favor de Dios, porque Él conoce tu esfuerzo. Yo voy a estar aquí, cerquita de ti, celebrando tus triunfos y dándote ánimos cuando sientas que no puedes más.
+                Mi amor, quiero que leas con atención: No dudes ni un solo segundo de lo que eres capaz. Sé que a veces la vida pesa y puede ser complicada, pero tú puedes con eso y con mucho más. Eres un hombre valiente, esforzado y con un corazón de oro.<br><br>
+                Mi flaquito, tú vas a lograr todo lo que te propongas con el favor de Dios, porque Él conoce tu esfuerzo. Yo voy a estar aquí, cerquita de ti, celebrando tus triunfos.
             </div>
 
-            <div class="firma">
-                Con todo mi amor, <br>
-                Luisa, tu gordita 🌹
-            </div>
+            <div class="firma">Con todo mi amor, <br>Luisa, tu gordita 🌹</div>
 
             <a href="almacen.html" class="btn-regresar">⬅ Volver al Almacén</a>
         </div>
